@@ -76,22 +76,25 @@ package org.red5.samples.publisher.command
 			var timeout : int = 			event.timeout;
 			var micIndex : int = 			selectedMicIndex - 1;
 			//
-			main.media.microphone = Microphone.getEnhancedMicrophone( micIndex );
+			main.media.microphone = Microphone.getMicrophone( micIndex );
 			microphone = main.media.microphone;
+			microphone.codec = SoundCodec.SPEEX;
 			//
-			microphone.setLoopBack( false );
+//			var options:MicrophoneEnhancedOptions = new MicrophoneEnhancedOptions();
+//			options.mode = MicrophoneEnhancedMode.FULL_DUPLEX;
+//			microphone.enhancedOptions = options;
+			microphone.setLoopBack(true);
 			//
 			var transform : SoundTransform = microphone.soundTransform;
 			transform.volume = 0;
 			//
-			microphone.codec = SoundCodec.SPEEX;
+			microphone.setUseEchoSuppression(true);
 			microphone.framesPerPacket = 1;
-			microphone.enableVAD = false;
-			microphone.setUseEchoSuppression( true );
+			microphone.enableVAD = true;
 			microphone.soundTransform = transform;
 			microphone.gain = gain;
 			microphone.rate = rate;
-			microphone.setSilenceLevel( level, timeout );
+			microphone.setSilenceLevel(level,timeout);
 			//
 			microphone.addEventListener( ActivityEvent.ACTIVITY, activityEventHandler );
 			microphone.addEventListener( StatusEvent.STATUS, statusEventHandler );

@@ -61,9 +61,9 @@ package  org.red5.samples.publisher.vo.settings
 		 * @return
 		 */		
 		public function AudioSettings(	micIndex : int = -1,
-										rate : int = 22,
+										rate : int = 16,
 										gain : int = 50,
-										level : int = 10,
+										level : int = 0,
 										timeout : int = 2000 ) 
 		{
 			this.micIndex = micIndex;

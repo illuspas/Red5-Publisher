@@ -283,7 +283,7 @@ package org.red5.samples.publisher.model
 		*/		
 		public var serverPresets : Array = 	 [	
 												new ServerPreset( "localhost oflaDemo",
-																  "rtmp://192.168.0.10/live", 
+																  "rtmp://localhost/live", 
 																  0, 0, 0 ), 
 								  				{ label:"------------------------------------" },
 								  				{ label:"Save server preset..." },
