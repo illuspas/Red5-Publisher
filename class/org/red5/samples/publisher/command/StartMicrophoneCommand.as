@@ -83,7 +83,7 @@ package org.red5.samples.publisher.command
 //			var options:MicrophoneEnhancedOptions = new MicrophoneEnhancedOptions();
 //			options.mode = MicrophoneEnhancedMode.FULL_DUPLEX;
 //			microphone.enhancedOptions = options;
-			microphone.setLoopBack(true);
+			microphone.setLoopBack(false);
 			//
 			var transform : SoundTransform = microphone.soundTransform;
 			transform.volume = 0;
